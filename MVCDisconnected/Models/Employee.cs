@@ -12,5 +12,6 @@ namespace MVCDisconnected.Models
         public string Job {  get; set; }
         public double Salary {  get; set; }
         public string Dname {  get; set; }
+        public bool IsReadOnly {  get; set; }
     }
 }

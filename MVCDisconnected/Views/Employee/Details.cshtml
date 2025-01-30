@@ -1,0 +1,21 @@
+﻿@model MVCDisconnected.Models.Employee
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet"/>
+</head>
+<body class="container">
+    <div class="mt-4 p-5 bg-black text-white rounded">
+        <h2 class="column-gap-md-5">@TempData["Message"]</h2>
+        <p>Employee Number : @Model.Eno</p>
+        <p>Name : @Model.Ename</p>
+        <p>Job : @Model.Job</p>
+        <p>Salary : @Model.Salary</p>
+        <p>Department Name : @Model.Dname</p>
+        <a href="/Employee/List" class="btn btn-light">Back to List</a>
+    </div>
+</body>
+</html>
