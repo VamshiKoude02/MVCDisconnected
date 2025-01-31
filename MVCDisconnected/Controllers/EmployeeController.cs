@@ -26,13 +26,18 @@ namespace MVCDisconnected.Controllers
         public ActionResult Create(Employee emp)
         {
             cdb.InsertEmployee(emp);
-            return RedirectToAction("List");
+            TempData["Message"] = "User created Sucessfully..!";
+            return RedirectToAction("Details" , new {id=emp.Eno});
         }
 
         public ActionResult Details(int id)
         {
             List<Employee> emps = cdb.GetEmployees();
             var emp = emps.FirstOrDefault(x => x.Eno == id);
+            if (TempData["Message"] == null)
+            {
+                TempData["Message"] = "Employee Information";
+            }
             return View(emp);
         }        
         public ActionResult Update(int id)
